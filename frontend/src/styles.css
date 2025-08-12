@@ -1,0 +1,294 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.search-results-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 20px;
+  background-color: #e0e6a2;
+}
+
+/* .navbar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.search-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #e0e6a2;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 20px;
+  width: 50%;
+  max-width: 500px;
+}
+
+.search-input {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  outline: none;
+  background-color: transparent;
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.vertical-line {
+  height: 24px;
+  width: 1px;
+  background-color: #ccc;
+}
+
+.header-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-term-display h2 {
+  font-size: 1.8em;
+  color: #333;
+}
+
+.add-ons-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  gap: 20px; /* If you still want some spacing between them */
+}
+
+.header-section {
+  flex-basis: 65%;
+  flex-grow: 1;
+}
+
+.add-ons-section {
+  flex-basis: 35%;
+  flex-grow: 1;
+}
+
+.search-more {
+  margin-bottom: 10px;
+}
+
+.search-more-input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  outline: none;
+  background-color: #fff;
+  color: #333;
+}
+
+.add-ons {
+  margin-top: 10px;
+}
+
+.review-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.review-card:hover {
+  transform: scale(1.02);
+}
+
+.reviews-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+}
+
+.review-user {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.review-time {
+  color: #888;
+}
+
+.review-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  color: #ffd700;
+}
+
+.review-votes {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Ensures some spacing between votes and actions */
+}
+
+.review-actions {
+  display: flex;
+  align-items: center;
+}
+
+.post-section textarea {
+  font-size: 16px;
+}
+
+.post-section button {
+  transition: background-color 0.2s ease;
+}
+
+.post-section button:hover {
+  background-color: #4cae4c;
+}
+
+.post-section {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 40px;
+  width: 100%;
+  justify-content: center;
+  /* max-width: 400px; */
+}
+
+.post-section textarea,
+.post-section .ql-container {
+  width: 100%;
+  float: left;
+}
+
+.post-section button {
+  float: right;
+}
+
+/* Miscellaneous Styles */
+h4,
+p {
+  margin: 0;
+}
+
+span {
+  display: inline-block;
+  font-size: 14px;
+}
+
+textarea::placeholder {
+  color: #999;
+}
+
+.review-card p {
+  margin: 5px 0;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border: 1px solid #999;
+}
+
+/* Login Modal Styles */
+.login-modal {
+  margin-left: 300px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.forgot-password {
+  font-size: small;
+  margin-bottom: 10px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.login-submit {
+  display: flex;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.create-account {
+  text-align: center;
+  font-size: small;
+  color: #333;
+  text-decoration: none;
+}
+
+.account-modal .modal-dialog {
+  max-width: none;
+  width: 25%;
+  height: 100%;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.account-modal .modal-content {
+  height: 100%;
+  border-radius: 0;
+  border-left: 1px solid #ddd;
+}
