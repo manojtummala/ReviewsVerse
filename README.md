@@ -264,5 +264,3 @@ docker compose up -d
 - Online inference endpoint for ranking
 - Advanced anomaly/spam detection with embeddings
 - PII redaction in raw topics + retention policies
-
----
