@@ -51,6 +51,12 @@
 
 ```mermaid
 flowchart LR
+  %% Color classes
+  classDef clients fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#0D47A1;
+  classDef services fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#1B5E20;
+  classDef streams fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#E65100;
+  classDef data fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px,color:#4A148C;
+
   subgraph Clients
     W["Web App<br/>React"]
   end
@@ -79,6 +85,12 @@ flowchart LR
   AF --> AGG
   AF --> ML
   W -->|analytics API| AGG
+
+  %% Apply classes
+  class W clients;
+  class API,MDB services;
+  class K,S3 streams;
+  class AF,GE,AGG,ML data;
 ```
 
 ### Post Review → Analytics Flow (Sequence)
@@ -96,16 +108,23 @@ sequenceDiagram
   participant G as GE
   participant AG as Aggregates
 
-  U->>FE: Submit review
-  FE->>API: POST /reviews
-  API->>DB: Insert review
-  API->>K: Produce events.reviews
-  Note over AF: Scheduled/near‑real‑time DAG
-  AF->>K: Consume events.reviews
-  AF->>G: Validate dataset (expectations)
-  G-->>AF: Pass/Fail
-  AF->>S: Write raw & cleaned parquet
-  AF->>AG: Build/refresh aggregates
+  rect rgba(227,242,253,0.45)
+    U->>FE: Submit review
+    FE->>API: POST /reviews
+    API->>DB: Insert review
+    API->>K: Produce events.reviews
+  end
+
+  Note over AF: Scheduled/near-real-time DAG
+
+  rect rgba(243,229,245,0.45)
+    AF->>K: Consume events.reviews
+    AF->>G: Validate dataset (expectations)
+    G-->>AF: Pass/Fail
+    AF->>S: Write raw & cleaned parquet
+    AF->>AG: Build/refresh aggregates
+  end
+
   FE->>AG: Fetch product aggregates
 ```
 
